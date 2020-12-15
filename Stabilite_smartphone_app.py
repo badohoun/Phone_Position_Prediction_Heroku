@@ -68,12 +68,7 @@ else:
         return features
 df1 = user_input_features()
 
-#def load_data1():
-   #accelerometer_data_path = 'matrix_trajet_resample_5s.csv'
-   #data = pd.read_csv(accelerometer_data_path)
-   #return data
 
-#df2 =  load_data1()
 st.subheader('User Input Parameters')
 
 if uploaded_file is not None :
@@ -83,30 +78,12 @@ else:
     st.write(df1)
 
 
-#X = df2.drop(labels = ['activity' , 'datetime'], axis =1)
-#Y = df2.activity
-
-#model = lgb.LGBMClassifier(n_estimators= 6000, random_state=np.random.seed(seed=123) , n_jobs=10, num_leaves=100  , objective = 'multiclass' , boosting_type = 'dart')
-
-#model.fit(X, Y)
 # Reads the saved classification model
 load_Phone_Position_prediction_model = pickle.load(open('phone_position_prediction_model.pkl', 'rb'))
-#explainer = shap.TreeExplainer(model)
-#shap_values =explainer.shap_values(X)
-
-#st.header('Feature Importance')
-#plt.title('Feature importance based on SHAP values (Bar) ')
-
-#shap.summary_plot(shap_values , X , plot_type="bar")
-
-#st.set_option('deprecation.showPyplotGlobalUse', False)
-#st.pyplot(bbox_inches = 'tight')
 
 
 # Apply a model to make predictions
 prediction = load_Phone_Position_prediction_model(df1)
-
-#prediction = model.predict(df1)
 
 
 
