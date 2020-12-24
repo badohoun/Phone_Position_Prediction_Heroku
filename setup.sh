@@ -1,5 +1,5 @@
   
-mkdir  \Phone_Position_Prediction_Heroku/
+mkdir -p \Phone_Position_Prediction_Heroku/
 
 echo "\
 [server]\n\
